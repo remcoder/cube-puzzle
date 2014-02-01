@@ -1,0 +1,26 @@
+smallest container / min_max xyz coords
+	- PolyCube already calcs this but it should be more rubust w respect to incomplete matrices
+
+generate all rotations
+	- All rotations can be found by:
+		- designate one of the face as F
+		- designate the face opposite F as F'
+		- start with the 6 directions F can face
+		combine with the 4 rotations the cube can have. (rotations around the axis that goes through the center of F and through the center of F')	
+		
+	- normalized rotations: some rotations might end up outside our 4x4x4 target cube, b/c off negative coords for example
+	  so we should translate back into the target cube to fix this.
+	
+	- check if these resulting rotational variants are really distinct
+
+generate all translational variants within 4x4x4
+
+
+combine 2 shapes
+count overlapping blocks
+
+Cubism features that we need;
+- combine 2 shapes into 1:
+  Shape.Combine(shape2);
+  Better than plotting 2 shapes ontop of each other b/c it will result in rendering glitches and degrades performance.
+  So to plot both a puzzle piece and its containing cuboid, both shapes can be merged such that the voxels of the puzzle piece 'win'. ie the container shape will lose the voxels for the voxels in the puzzle piece with the same coords.

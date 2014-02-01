@@ -1,0 +1,64 @@
+  <!DOCTYPE html >
+<html>
+  <head>
+    <title>Cube Puzzle</title>
+    
+    <link rel="stylesheet" href="cubism.css"/>
+    <style>
+    body
+    {
+      text-align: center;
+    }
+
+    #main
+    {
+      position: relative;
+      margin: auto;
+      width:0;
+      top:250px;
+    }
+  
+    .shape_a .voxel-side
+    {
+      background-color: blue;
+    }
+    
+    .shape_b .voxel-side
+    {
+      background-color: purple;
+    }
+    
+    .shape_c .voxel-side
+    {
+      background-color: #fa0; 
+    }
+    .shape_d .voxel-side
+    {
+      background-color: #8f8;
+    }
+    
+    .shape_e .voxel-side
+    {
+      background-color: pink;
+    }
+
+    .shape_f .voxel-side
+    {
+      background-color: lightgrey;
+    }
+    
+    </style>
+  </head>
+  <body>
+    <h2>Shapes</h2>
+    <div id="main">
+
+    </div>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="utils.js"></script>
+    <script src="Element.Transform3d.js"></script>
+    <script src="Cubism.js"></script>
+    <script src="solver.js"></script>
+    <script>$(document).ready(init);</script>
+  </body>
+</html>
