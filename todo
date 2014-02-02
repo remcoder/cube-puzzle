@@ -8,7 +8,8 @@ generate all rotations
 	- normalized rotations: the bounding cuboid should have its 'min' point at the Origin.
 	
 	- check if these resulting rotational variants are really distinct
-
+    - equals() for Point and PointSet
+      - need normalized order of Points in PointSet
 
 generate all translational variants within 4x4x4
   - draw the shapes in 4x4x4 area

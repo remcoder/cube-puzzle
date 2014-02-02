@@ -49,5 +49,22 @@ module Cubism {
             var bounds = this.getBounds();
             return this.translateAll(-bounds.min.x, -bounds.min.y, -bounds.min.z);
         }
+
+        equals(s2 : PointSet) : boolean {
+            if (this.points.length!= s2.points.length)
+                return false;
+
+
+            function compare(a, b) {
+                return a.x - b.x || a.y - b.y || a.z - b.z;
+            }
+
+            this.points.sort(compare);
+            s2.points.sort(compare);
+
+            return this.points.every( (p: Point ,index) => {
+                return p.equals(s2.points[index]);
+            });
+        }
 	}
 }

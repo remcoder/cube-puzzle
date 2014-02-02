@@ -42,5 +42,9 @@ module Cubism {
     translate(x,y,z) : Point {
         return new Point(this.x + x, this.y + y, this.z + z);
     }
+
+    equals(p2 : Point) : boolean {
+        return this.x == p2.x && this.y == p2.y && this.z == p2.z;
+    }
   }
 }
