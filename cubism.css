@@ -1,7 +1,7 @@
 .voxel-shape-container {
     position: relative;
     -webkit-transform-style: preserve-3d;
-    -webkit-perspective: 1000px;
+    -webkit-perspective: 100000px;
 }
 
 .voxel-shape
@@ -9,7 +9,7 @@
   position: absolute;
   -webkit-transform-style: preserve-3d;
 
-  -webkit-transform: rotate3d(-1,-1,0, 45deg);
+  -webkit-transform: rotate3d(-1,1, 0, 25deg);
 }
 
 .voxel {

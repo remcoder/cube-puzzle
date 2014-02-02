@@ -1,5 +1,4 @@
-
-///<reference path='../Cubism.ts' />
+///<reference path='../Cubism.Shape.ts' />
 
 module Tests {
     export function run() {

@@ -9,7 +9,9 @@ generate all rotations
 	
 	- check if these resulting rotational variants are really distinct
 
+
 generate all translational variants within 4x4x4
+  - draw the shapes in 4x4x4 area
 
 
 combine 2 shapes
