@@ -5,19 +5,9 @@
     
     <link rel="stylesheet" href="cubism.css"/>
     <style>
-    body
-    {
-      text-align: center;
+    table {
+        margin: auto;
     }
-
-    #main
-    {
-      position: relative;
-      margin: auto;
-      width:0;
-      top:250px;
-    }
-  
     .shape_a .voxel-side
     {
       background-color: blue;
@@ -51,9 +41,9 @@
   </head>
   <body>
     <h2>Shapes</h2>
-    <div id="main">
+    <table id="variants">
 
-    </div>
+    </table>
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="typescript/utils.js"></script>
     <script src="typescript/Element.Transform3d.js"></script>
@@ -61,6 +51,10 @@
     <script src="typescript/Cubism.Point.js"></script>
     <script src="typescript/Cubism.PointSet.js"></script>
     <script src="typescript/solver.js"></script>
-    <script>$(document).ready(init);</script>
+    <script src="typescript/tests/Tests.js"></script>
+    <script>$(document).ready(function() {
+        Tests.run();
+        Solver.solve();
+    });</script>
   </body>
 </html>

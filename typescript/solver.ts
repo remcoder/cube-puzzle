@@ -2,6 +2,8 @@
 ///<reference path='Cubism.ts' />
 ///<reference path='Cubism.PointSet.ts' />
 
+module Solver {
+
 
 var Shapes = {
     shape_a : [{x:0,y:0,z:0},{x:3,y:0,z:0},{x:0,y:1,z:0},{x:0,y:0,z:1},{x:1,y:0,z:1},{x:2,y:0,z:1},{x:3,y:0,z:1},{x:3,y:1,z:1}],
@@ -14,15 +16,26 @@ var Shapes = {
 
 var voxelSize = 50; // pixel size of 1 voxel
 
-function createShape(name, pointSet : Cubism.PointSet) {
-  var stage = $('#main')[0];
-  var shape = window[name] = new Cubism.Shape(stage, voxelSize, pointSet.points);
-  $(shape.element).addClass(name);
+function drawShape(className, pointSet : Cubism.PointSet) {
+  var variants = <HTMLTableElement> $('#variants')[0];
+  var row = <HTMLTableRowElement> variants.insertRow(0);
+  var cell = row.insertCell();
+  var $container = $('<div>')
+      .css({
+          width: 200,
+          height: 200
+      })
+      .addClass('voxel-shape-container');
+
+  $(cell).append($container);
+
+  var shape = new Cubism.Shape($container[0], voxelSize, pointSet.points);
+  $(shape.element).addClass(className);
 
   return shape;
 }
 
-function rotationalVariants(s : Cubism.Shape) {
+function rotationalVariants(s : Cubism.PointSet) {
   var rotations =
    ["",
     "Y",
@@ -47,48 +60,55 @@ function rotationalVariants(s : Cubism.Shape) {
     "XXX",
     "XXXZ",
     "XXXZZ",
-    "XXXZZZ"];
+    "XXXZZZ"].slice(0,5);
 
-    var clones = [];
+    var variants = [];
     for(var r=0 ; r<rotations.length ; r++)
     {
       var rot = rotations[r];
-      var clone = s.clone();
-      clones.push(clone);
+      var variant = s.clone();
 
-      for (var i=0 ; i<rot.length ; r++) 
+
+      for (var i=0 ; i<rot.length ; i++)
       {
         var step = rot[i];
         switch (step) {
           case "X":
-            s.rotateX();
+            variant = variant.rotateAllX();
             break;
           case "Y":
-            s.rotateY();
+            variant = variant.rotateAllY();
             break;
           case "Z":
-            s.rotateZ();
+            variant = variant.rotateAllZ();
             break;
           }
       }
+      variant = variant.normalize();
+      variants.push(variant);
     }
 
-    console.log(clones);
-    return clones;
+    return variants;
 }
 
-function init() {
+export function solve() {
   
   var stage = $('#main')[0];
-  Cubism.CreateStage(stage, 1000);
+
   
   //var a = createShape('shape_a');
-  var a = new Cubism.PointSet(Shapes['shape_b']);
+  var shape_a : Array<Cubism.IPos> = Shapes.shape_a;
+  var a = new Cubism.PointSet(shape_a);
   console.log(JSON.stringify(a));
-  var a1 = createShape('shape_a', a);
-  
 
-  a1.element.translateY(-4*voxelSize).translateX(-13*voxelSize);
+//  var a1 = drawShape('shape_a', a);
+
+  var variants = rotationalVariants(a);
+  console.log(JSON.stringify);
+
+
+  variants.forEach(v => drawShape('shape_a', v));
+
 
   // // rotate around Z
   // var a2 = a.clone().rotateZ();
@@ -125,3 +145,4 @@ function init() {
   
 }
 
+}
