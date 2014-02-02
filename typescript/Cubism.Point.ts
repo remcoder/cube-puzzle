@@ -18,13 +18,13 @@ module Cubism {
 	      this.x = x_or_pos;
 	      this.y = y;
 	      this.z = z;
-	  }
-	  else 
-	  {
-	  	this.x = x_or_pos.x;
-	  	this.y = x_or_pos.y;
-	  	this.z = x_or_pos.z;
-	  }
+  	  }
+  	  else 
+  	  {
+  	  	this.x = x_or_pos.x;
+  	  	this.y = x_or_pos.y;
+  	  	this.z = x_or_pos.z;
+  	  }
     }
 
     rotateZ() {
@@ -37,6 +37,10 @@ module Cubism {
 
     rotateY() {
       return new Point(-this.z, this.y, this.x)
+    }
+
+    translate(x,y,z) : Point {
+        return new Point(this.x + x, this.y + y, this.z + z);
     }
   }
 }

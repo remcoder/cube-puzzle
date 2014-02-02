@@ -9,7 +9,7 @@
 
 
 ///<reference path='utils.ts' />
-///<reference path='CSSStyleDeclaration.d.ts' />
+///<reference path='../typings/CSSStyleDeclaration.d.ts' />
 
 interface HTMLElement {
   // method that start with 'set' will overwrite current transformation

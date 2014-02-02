@@ -5,19 +5,15 @@
  This is a little library for making shapes (polycubes) out of multiple cubes using CSS 3D Transforms
  */
 
+///<reference path='../typings/jquery/jquery.d.ts' />
 ///<reference path='../typings/CSSStyleDeclaration.d.ts' />
 ///<reference path='Element.Transform3d.ts' />
 ///<reference path='Cubism.Point.ts' />
+///<reference path='Cubism.PointSet.ts' />
  
 module Cubism {
   
   enum Side { front, back, left, right, top, bottom };
-
-
-  export function CreateStage(el : HTMLElement, perspective : number) {
-    el.style.webkitPerspective = perspective + "px";
-    el.style.webkitTransformStyle = "preserve-3d";
-  }
 
   export class Shape {
 
