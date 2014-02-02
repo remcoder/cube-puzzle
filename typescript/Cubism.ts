@@ -150,7 +150,7 @@ module Cubism {
           side.translateY(offset).rotateX(90);
           break;
         case Side.bottom:
-          side.translateY(-offset).rotateX(90);
+          side.translateY(-offset).rotateX(-90);
           break;
         default:
           side.rotateY(90);    
