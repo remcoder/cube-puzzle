@@ -1,4 +1,4 @@
-///<reference path='typings/jquery/jquery.d.ts' />
+///<reference path='../typings/jquery/jquery.d.ts' />
 ///<reference path='Cubism.ts' />
 ///<reference path='Cubism.PointSet.ts' />
 var Shapes = {

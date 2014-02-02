@@ -5,7 +5,7 @@
  This is a little library for making shapes (polycubes) out of multiple cubes using CSS 3D Transforms
  */
 
-///<reference path='CSSStyleDeclaration.d.ts' />
+///<reference path='../typings/CSSStyleDeclaration.d.ts' />
 ///<reference path='Element.Transform3d.ts' />
 ///<reference path='Cubism.Point.ts' />
  
