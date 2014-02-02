@@ -2,7 +2,7 @@
  * MIT license
  * remcoder [at] gmail (dot) com
  
- This is a little library for making shapes (polycubes) out of multiple cubes using CSS 3D Transforms
+ This is a little library for making shapes out of voxels (cubes) using CSS 3D Transforms
  */
 
 ///<reference path='../typings/jquery/jquery.d.ts' />
@@ -73,32 +73,32 @@ module Cubism {
       return newShape;
     }
 
-    // rotate around the Z axis, in steps of 90 degrees 
-    rotateZ(steps : number = 1) {
-      this.voxels.forEach((v) => {
-        v.rotateZ(steps);
-        v.updatePosition();
-      })
-      return this;
-    }
-
-    // rotate around the X axis, in steps of 90 degrees 
-    rotateX(steps : number = 1) {
-      this.voxels.forEach((v) => {
-        v.rotateX(steps);
-        v.updatePosition();
-      })
-      return this;
-    }
-
-    // rotate around the X axis, in steps of 90 degrees 
-    rotateY(steps : number = 1) {
-      this.voxels.forEach((v) => {
-        v.rotateY(steps);
-        v.updatePosition();
-      })
-      return this;
-    }
+//    // rotate around the Z axis, in steps of 90 degrees
+//    rotateZ(steps : number = 1) {
+//      this.voxels.forEach((v) => {
+//        v.rotateZ(steps);
+//        v.updatePosition();
+//      })
+//      return this;
+//    }
+//
+//    // rotate around the X axis, in steps of 90 degrees
+//    rotateX(steps : number = 1) {
+//      this.voxels.forEach((v) => {
+//        v.rotateX(steps);
+//        v.updatePosition();
+//      })
+//      return this;
+//    }
+//
+//    // rotate around the X axis, in steps of 90 degrees
+//    rotateY(steps : number = 1) {
+//      this.voxels.forEach((v) => {
+//        v.rotateY(steps);
+//        v.updatePosition();
+//      })
+//      return this;
+//    }
   }
 
   // a Voxel is a set of coords and a DOM tree
@@ -163,32 +163,32 @@ module Cubism {
       this.element.setTranslate3d(this.pos.x*this.voxelSize, this.pos.y*this.voxelSize, this.pos.z*this.voxelSize);
           //.translateZ(center);
     }
-
-    // rotate around the Z axis, in steps of 90 degrees,
-    rotateZ(steps : number = 1) {
-      for(var i=0 ; i<steps ; i++) {
-        var prevX = this.pos.x;
-        this.pos.x = this.pos.y;
-        this.pos.y = -prevX;
-      }
-    }
-
-    // rotate around the X axis, in steps of 90 degrees,
-    rotateX(steps : number = 1) {
-      for(var i=0 ; i<steps ; i++) {
-        var prevY = this.pos.y;
-        this.pos.y = this.pos.z;
-        this.pos.z = -prevY;
-      }
-    }
-
-    // rotate around the Y axis, in steps of 90 degrees,
-    rotateY(steps : number = 1) {
-      for(var i=0 ; i<steps ; i++) {
-        var prevZ = this.pos.z;
-        this.pos.z = this.pos.x;
-        this.pos.x = -prevZ;
-      }
-    }
+//
+//    // rotate around the Z axis, in steps of 90 degrees,
+//    rotateZ(steps : number = 1) {
+//      for(var i=0 ; i<steps ; i++) {
+//        var prevX = this.pos.x;
+//        this.pos.x = this.pos.y;
+//        this.pos.y = -prevX;
+//      }
+//    }
+//
+//    // rotate around the X axis, in steps of 90 degrees,
+//    rotateX(steps : number = 1) {
+//      for(var i=0 ; i<steps ; i++) {
+//        var prevY = this.pos.y;
+//        this.pos.y = this.pos.z;
+//        this.pos.z = -prevY;
+//      }
+//    }
+//
+//    // rotate around the Y axis, in steps of 90 degrees,
+//    rotateY(steps : number = 1) {
+//      for(var i=0 ; i<steps ; i++) {
+//        var prevZ = this.pos.z;
+//        this.pos.z = this.pos.x;
+//        this.pos.x = -prevZ;
+//      }
+//    }
   }
 }
