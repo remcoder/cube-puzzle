@@ -20,7 +20,7 @@ module Cubism {
 
 		rotateAllZ(): PointSet
 		{
-			return new PointSet(this.points.map(p => p.rotateY() ));
+			return new PointSet(this.points.map(p => p.rotateZ() ));
 		}
 
         clone() : PointSet {
