@@ -2,6 +2,9 @@
     position: relative;
     -webkit-transform-style: preserve-3d;
     -webkit-perspective: 100000px;
+    -webkit-perspective-origin:50% 50%;
+
+    outline: 1px solid red;
 }
 
 .voxel-shape
@@ -9,7 +12,7 @@
   position: absolute;
   -webkit-transform-style: preserve-3d;
 
-  -webkit-transform: rotate3d(-1,1, 0, 25deg);
+  -webkit-transform: rotate3d(-1,1, 0, 20deg);
 }
 
 .voxel {
