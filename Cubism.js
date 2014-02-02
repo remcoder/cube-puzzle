@@ -5,6 +5,7 @@ This is a little library for making shapes (polycubes) out of multiple cubes usi
 */
 ///<reference path='CSSStyleDeclaration.d.ts' />
 ///<reference path='Element.Transform3d.ts' />
+///<reference path='Cubism.Point.ts' />
 var Cubism;
 (function (Cubism) {
     var Side;
@@ -196,3 +197,4 @@ var Cubism;
     })();
     Cubism.Voxel = Voxel;
 })(Cubism || (Cubism = {}));
+//# sourceMappingURL=Cubism.js.map

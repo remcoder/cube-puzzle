@@ -1,5 +1,6 @@
 ///<reference path='typings/jquery/jquery.d.ts' />
 ///<reference path='Cubism.ts' />
+///<reference path='Cubism.PointSet.ts' />
 
 
 var Shapes = {
@@ -13,9 +14,9 @@ var Shapes = {
 
 var voxelSize = 50; // pixel size of 1 voxel
 
-function createShape(name) {
+function createShape(name, pointSet : Cubism.PointSet) {
   var stage = $('#main')[0];
-  var shape = window[name] = new Cubism.Shape(stage, voxelSize, Shapes[name]);
+  var shape = window[name] = new Cubism.Shape(stage, voxelSize, pointSet.points);
   $(shape.element).addClass(name);
 
   return shape;
@@ -81,34 +82,39 @@ function init() {
   var stage = $('#main')[0];
   Cubism.CreateStage(stage, 1000);
   
-  var a = createShape('shape_a');
-  a.element.translateY(-4*voxelSize).translateX(-13*voxelSize);
+  //var a = createShape('shape_a');
+  var a = new Cubism.PointSet(Shapes['shape_b']);
+  console.log(JSON.stringify(a));
+  var a1 = createShape('shape_a', a);
+  
 
-  // rotate around Z
-  var a2 = a.clone().rotateZ();
-  var a3 = a.clone().rotateZ(2);
-  var a4 = a.clone().rotateZ(3);
+  a1.element.translateY(-4*voxelSize).translateX(-13*voxelSize);
+
+  // // rotate around Z
+  // var a2 = a.clone().rotateZ();
+  // var a3 = a.clone().rotateZ(2);
+  // var a4 = a.clone().rotateZ(3);
   
-  a2.element.translateY(-4*voxelSize).translateX(-7*voxelSize);
-  a3.element.translateY(-4*voxelSize).translateX(0*voxelSize);
-  a4.element.translateY(-4*voxelSize).translateX(7*voxelSize);
+  // a2.element.translateY(-4*voxelSize).translateX(-7*voxelSize);
+  // a3.element.translateY(-4*voxelSize).translateX(0*voxelSize);
+  // a4.element.translateY(-4*voxelSize).translateX(7*voxelSize);
   
-  // rotate around X
-  var a5 = a.clone().rotateX();
-  var a6 = a.clone().rotateX(2);
-  var a7 = a.clone().rotateX(3);
-  a5.element.translateY(voxelSize).translateX(-7*voxelSize);
-  a6.element.translateY(voxelSize).translateX(0*voxelSize);
-  a7.element.translateY(voxelSize).translateX(7*voxelSize);
+  // // rotate around X
+  // var a5 = a.clone().rotateX();
+  // var a6 = a.clone().rotateX(2);
+  // var a7 = a.clone().rotateX(3);
+  // a5.element.translateY(voxelSize).translateX(-7*voxelSize);
+  // a6.element.translateY(voxelSize).translateX(0*voxelSize);
+  // a7.element.translateY(voxelSize).translateX(7*voxelSize);
 
   
-  // rotate around Y 
-  var a8 = a.clone().rotateY();
-  var a9 = a.clone().rotateY(2);
-  var a10 = a.clone().rotateY(3);
-  a8.element.translateY(4*voxelSize).translateX(-7*voxelSize);
-  a9.element.translateY(4*voxelSize).translateX(0*voxelSize);
-  a10.element.translateY(4*voxelSize).translateX(7*voxelSize);
+  // // rotate around Y 
+  // var a8 = a.clone().rotateY();
+  // var a9 = a.clone().rotateY(2);
+  // var a10 = a.clone().rotateY(3);
+  // a8.element.translateY(4*voxelSize).translateX(-7*voxelSize);
+  // a9.element.translateY(4*voxelSize).translateX(0*voxelSize);
+  // a10.element.translateY(4*voxelSize).translateX(7*voxelSize);
 
   // var cube = Cubism.Shape.Cube(stage, voxelSize, 4); 
   // cube.element.translateY(-4*voxelSize).translateX(-5*voxelSize);

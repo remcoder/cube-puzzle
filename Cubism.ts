@@ -7,16 +7,12 @@
 
 ///<reference path='CSSStyleDeclaration.d.ts' />
 ///<reference path='Element.Transform3d.ts' />
+///<reference path='Cubism.Point.ts' />
  
 module Cubism {
   
   enum Side { front, back, left, right, top, bottom };
 
-  export interface I3DPos { 
-    x:number; 
-    y:number; 
-    z:number;
-  }
 
   export function CreateStage(el : HTMLElement, perspective : number) {
     el.style.webkitPerspective = perspective + "px";
@@ -45,7 +41,7 @@ module Cubism {
     element : HTMLElement
     voxels  : Array<Voxel> = []
 
-    constructor (public container : HTMLElement, public voxelSize : number, coordList: Array<I3DPos>) {
+    constructor (public container : HTMLElement, public voxelSize : number, coordList: Array<IPos>) {
       // TODO: calc the size of the shape in 3 dimensions
       this.width = voxelSize;
       this.height = voxelSize;
@@ -112,7 +108,7 @@ module Cubism {
   // a Voxel is a set of coords and a DOM tree
   export class Voxel {
     element : HTMLElement
-    constructor (public shape : Shape, public pos : I3DPos, public voxelSize : number ) { 
+    constructor (public shape : Shape, public pos : IPos, public voxelSize : number ) { 
       //var center =  this.autocenter ? -(0.5*this.zvoxelSize-0.5*this.voxelSize) : 0;
 
       this.createVoxelElement();
