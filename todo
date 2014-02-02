@@ -1,19 +1,7 @@
-generate all rotations
-	- All rotations can be found by:
-		- designate one of the face as F
-		- designate the face opposite F as F'
-		- start with the 6 directions F can face
-		combine with the 4 rotations the cube can have. (rotations around the axis that goes through the center of F and through the center of F')	
-		
-	- normalized rotations: the bounding cuboid should have its 'min' point at the Origin.
-	
-	- check if these resulting rotational variants are really distinct
-    - equals() for Point and PointSet
-      - need normalized order of Points in PointSet
+- improve bitstring representation for speed
 
 generate all translational variants within 4x4x4
   - draw the shapes in 4x4x4 area
-
 
 combine 2 shapes
 count overlapping blocks

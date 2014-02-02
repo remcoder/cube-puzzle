@@ -51,8 +51,8 @@ module Cubism {
         }
 
         equals(s2 : PointSet) : boolean {
-            if (this.points.length!= s2.points.length)
-                return false;
+//            if (this.points.length!= s2.points.length)
+//                return false;
 
 
             function compare(a, b) {
@@ -65,6 +65,20 @@ module Cubism {
             return this.points.every( (p: Point ,index) => {
                 return p.equals(s2.points[index]);
             });
+        }
+
+        equals2(s2 : PointSet) : boolean {
+            return this.toString() == s2.toString();
+        }
+
+        toString() : string {
+            var bits = new Array(64);
+            var result = "";
+            this.points.forEach(p => bits[p.x + p.y*4 + p.z*16] = true);
+            for(var i=0 ; i<64 ; i++)
+                result += bits[i] ? "1" : "0";
+
+            return result;
         }
 	}
 }

@@ -57,11 +57,16 @@ module Tests {
         }
 
         // equals
+        var pSet4 = new Cubism.PointSet([{x:0,y:0,z:0}, {x:1,y:0,z:0}]);
+        var pSet5 = new Cubism.PointSet([{x:1,y:0,z:0}, {x:2,y:0,z:0}]);
+        if (pSet4.equals2(pSet5))
+            throw new Error('distinct pointsets should  not be equal');
+
         Object.keys(Solver.Pieces).forEach(p=> {
             var piece = Solver.Pieces[p];
             var pSet1 = new Cubism.PointSet(piece);
             var pSet2 = new Cubism.PointSet(shuffle(piece));
-            if (! pSet1.equals(pSet2))
+            if (! pSet1.equals2(pSet2))
                 throw new Error('pointset should equal itself');
         });
 
@@ -69,41 +74,45 @@ module Tests {
 
         var pSet4 = new Cubism.PointSet([{x:0,y:0,z:0}, {x:1,y:0,z:0}]);
         var pSet5 = new Cubism.PointSet([{x:1,y:0,z:0}, {x:0,y:0,z:0}]);
-        if (! pSet4.equals(pSet5))
+        if (! pSet4.equals2(pSet5))
             throw new Error('pointset equality shouldn\'t depend on order');
 
         var pSet4 = new Cubism.PointSet([{x:0,y:0,z:0}, {x:0,y:1,z:0}]);
         var pSet5 = new Cubism.PointSet([{x:0,y:1,z:0}, {x:0,y:0,z:0}]);
-        if (! pSet4.equals(pSet5))
+        if (! pSet4.equals2(pSet5))
             throw new Error('pointset equality shouldn\'t depend on order');
 
         var pSet4 = new Cubism.PointSet([{x:0,y:0,z:0}, {x:0,y:0,z:1}]);
         var pSet5 = new Cubism.PointSet([{x:0,y:0,z:1}, {x:0,y:0,z:0}]);
-        if (! pSet4.equals(pSet5))
+        if (! pSet4.equals2(pSet5))
             throw new Error('pointset equality shouldn\'t depend on order');
 
-//        var count = 0;
-//        Object.keys(Solver.Pieces).forEach(p=> {
-//            var piece = Solver.Pieces[p];
-//            var variants = Solver.rotationalVariants(new Cubism.PointSet(piece));
-//
-//            variants.forEach(v1 =>{
-//                variants.forEach(v2 =>{
-//
-//                    if (v1.variant != v2.variant) {
-//                        console.debug( count + '| testing ' + p + ': ' + (v1.variant || 'Id') + ' vs ' + (v2.variant || 'Id'));
-//                        if (v1.pointSet.equals(v2.pointSet)) {
-//                            console.debug(JSON.stringify(v1.pointSet));
-//                            console.debug(JSON.stringify(v2.pointSet));
-//                            throw new Error('variant ' + v1.variant + ' enexpectedly equals ' + v2.variant);
-//                        }
-//
-//                        count++;
-//                    }
-//                });
-//            });
-//        });
+        var count = 0;
+        var before = +new Date;
+        Object.keys(Solver.Pieces).forEach(p=> {
+            var piece = Solver.Pieces[p];
+            var variants = Solver.rotationalVariants(new Cubism.PointSet(piece));
 
+            variants.forEach(v1 =>{
+                variants.forEach(v2 =>{
 
+                    if (v1.variant != v2.variant) {
+                        console.debug( count + '| testing ' + p + ': ' + (v1.variant || 'Id') + ' vs ' + (v2.variant || 'Id'));
+                        if (v1.pointSet.equals2(v2.pointSet)) {
+                            console.debug(JSON.stringify(v1.pointSet));
+
+                            console.debug(JSON.stringify(v2.pointSet));
+                            console.debug(v1.pointSet.toString());
+
+                            console.debug(v2.pointSet.toString());
+                            throw new Error('variant ' + v1.variant + ' unexpectedly equals ' + v2.variant);
+                        }
+
+                        count++;
+                    }
+                });
+            });
+        });
+        console.log(+new Date - before, 'ms passed');
     }
 }
