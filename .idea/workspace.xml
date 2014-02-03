@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4fb1309-22e5-4877-b0be-c46182c6cc3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typescript/Cubism.PointSet.ts" afterPath="$PROJECT_DIR$/typescript/Cubism.PointSet.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typescript/Cubism.Shape.ts" afterPath="$PROJECT_DIR$/typescript/Cubism.Shape.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typescript/Element.Transform3d.ts" afterPath="$PROJECT_DIR$/typescript/Element.Transform3d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cubism.css" afterPath="$PROJECT_DIR$/cubism.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typescript/solver.ts" afterPath="$PROJECT_DIR$/typescript/solver.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo" afterPath="$PROJECT_DIR$/todo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cube_puzzle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +28,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="21" selection-start="801" selection-end="801" vertical-scroll-proportion="-18.916666" vertical-offset="311" max-vertical-offset="1260">
+            <state line="7" column="4" selection-start="134" selection-end="189" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="1320">
               <folding />
             </state>
           </provider>
@@ -44,7 +37,7 @@
       <file leaf-file-name="cubism.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cubism.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="1" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+            <state line="6" column="43" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -107,7 +100,7 @@
       <file leaf-file-name="solver.ts" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/typescript/solver.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="88" selection-start="3184" selection-end="3184" vertical-scroll-proportion="0.375" vertical-offset="750" max-vertical-offset="2865">
+            <state line="163" column="35" selection-start="5807" selection-end="5807" vertical-scroll-proportion="1.5416666" vertical-offset="1305" max-vertical-offset="2700">
               <folding />
             </state>
           </provider>
@@ -143,10 +136,10 @@
         <option value="$PROJECT_DIR$/typescript/tests/Tests.ts" />
         <option value="$PROJECT_DIR$/todo" />
         <option value="$PROJECT_DIR$/typescript/Element.Transform3d.ts" />
-        <option value="$PROJECT_DIR$/cubism.css" />
         <option value="$PROJECT_DIR$/typescript/Cubism.Shape.ts" />
         <option value="$PROJECT_DIR$/typescript/Cubism.PointSet.ts" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/cubism.css" />
         <option value="$PROJECT_DIR$/typescript/solver.ts" />
       </list>
     </option>
@@ -598,20 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cubism.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="1" selection-start="813" selection-end="813" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="21" selection-start="801" selection-end="801" vertical-scroll-proportion="-18.916666" vertical-offset="311" max-vertical-offset="1260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/typescript/Element.Transform3d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="42" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="2745">
@@ -619,9 +598,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="4" selection-start="134" selection-end="189" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="1320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cubism.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="43" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/typescript/solver.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="88" selection-start="3184" selection-end="3184" vertical-scroll-proportion="0.375" vertical-offset="750" max-vertical-offset="2865">
+        <state line="163" column="35" selection-start="5807" selection-end="5807" vertical-scroll-proportion="1.5416666" vertical-offset="1305" max-vertical-offset="2700">
           <folding />
         </state>
       </provider>

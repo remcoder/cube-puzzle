@@ -4,8 +4,6 @@
 
 module Solver {
 
-
-
     export var Pieces : { [key : string] : Array<Cubism.IPos> } = {
         shape_a : [{x:0,y:0,z:0},{x:3,y:0,z:0},{x:0,y:1,z:0},{x:0,y:0,z:1},{x:1,y:0,z:1},{x:2,y:0,z:1},{x:3,y:0,z:1},{x:3,y:1,z:1}],
         shape_b : [{x:0,y:0,z:0},{x:0,y:1,z:0},{x:3,y:1,z:0},{x:0,y:1,z:1},{x:1,y:1,z:1},{x:2,y:1,z:1},{x:3,y:1,z:1}],
@@ -74,9 +72,7 @@ module Solver {
             .addClass(variant)
             .attr('title', variant);
 
-        shape.element
-            .translate3d(pos.x, pos.y , pos.z)
-            .rotateAxisAngle(-1,-1, 0, 20);
+        shape.element.translate3d(pos.x, pos.y , pos.z);
 
         var xyPlanePointSet = Cubism.PointSet.Cuboid(4, 4, 1).translateAll(0,0,-1);
         var xyPlane = new Cubism.Shape($container[0], voxelSize, xyPlanePointSet.points);
@@ -84,9 +80,7 @@ module Solver {
             .addClass("plane")
             .addClass("xy-plane");
 
-        xyPlane.element
-            .translate3d(pos.x, pos.y , pos.z)
-            .rotateAxisAngle(-1,-1, 0, 20);
+        xyPlane.element.translate3d(pos.x, pos.y , pos.z);
 
         var yzPlanePointSet = Cubism.PointSet.Cuboid(1, 4, 4).translateAll(-1,0,0);
         var yzPlane = new Cubism.Shape($container[0], voxelSize, yzPlanePointSet.points);
@@ -94,9 +88,7 @@ module Solver {
             .addClass("plane")
             .addClass("yz-plane");
 
-        yzPlane.element
-            .translate3d(pos.x, pos.y , pos.z)
-            .rotateAxisAngle(-1,-1, 0, 20);
+        yzPlane.element.translate3d(pos.x, pos.y , pos.z);
 
         var xzPlanePointSet = Cubism.PointSet.Cuboid(4, 1, 4).translateAll(0,4,0);
         var xzPlane = new Cubism.Shape($container[0], voxelSize, xzPlanePointSet.points);
@@ -104,9 +96,7 @@ module Solver {
             .addClass("plane")
             .addClass("xz-plane");
 
-        xzPlane.element
-            .translate3d(pos.x, pos.y , pos.z)
-            .rotateAxisAngle(-1,-1, 0, 20);
+        xzPlane.element.translate3d(pos.x, pos.y , pos.z);
 
         return shape;
     }
@@ -169,20 +159,19 @@ module Solver {
 
     export function solve() {
 
-      var offset = new Cubism.Point({x:200, y:0, z:0});
+      var offset = new Cubism.Point({x:50, y:50, z:0});
 
-      Object.keys(Pieces).forEach(key => {
+      Object.keys(Pieces).slice(0,1).forEach((key,i) => {
           var piece = Pieces[key];
           var pointSet = new Cubism.PointSet(<Array<Cubism.IPos>>piece);
           var variants = rotationalVariants(pointSet);
           variants.forEach( v => {
               drawShape3(key, v.pointSet, v.variant, offset)
-              offset = offset.translate(0,250,0);
+               if (i == 2)
+                offset = new Cubism.Point({x:50, y:300, z:0})
+               else
+                offset = offset.translate(300,0,0);
           });
-
       })
-
-
     }
-
 }
