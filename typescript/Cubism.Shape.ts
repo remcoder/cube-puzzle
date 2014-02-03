@@ -17,20 +17,6 @@ module Cubism {
 
   export class Shape {
 
-    /**
-      * @param scale The scale at which a single voxel is drawn
-      */
-    static Cube(containerElement : HTMLElement, voxelSize : number, edgeLength: number) : Shape {
-      var voxels = [];
-
-      for(var x=0 ; x<edgeLength ; x++)
-      for(var y=0 ; y<edgeLength ; y++)
-      for(var z=0 ; z<edgeLength ; z++)
-        voxels.push({x:x, y:y, z:z});
-
-      return new Shape(containerElement, voxelSize, voxels);
-    }
-
     width   : number
     height  : number
     depth   : number

@@ -31,6 +31,7 @@ interface HTMLElement {
   translateY(y: number);
   translateZ(z: number);
 
+  rotateAxisAngle(x:number, y:number, z:number, a: number);
   rotate3d(x:number,y:number,z:number);
   rotateX(angle: number);
   rotateY(angle: number);
@@ -47,6 +48,7 @@ interface WebKitCSSMatrix {
   __IDENTITY__ : WebKitCSSMatrix;
   translate(x:number, y:number, z:number) : WebKitCSSMatrix;
   rotate(x:number, y:number, z:number) : WebKitCSSMatrix;
+  rotateAxisAngle(x:number, y:number, z:number, a: number) : WebKitCSSMatrix;
   scale(x:number, y:number, z:number) : WebKitCSSMatrix;
 }
 
@@ -119,15 +121,25 @@ extend(Element.prototype, {
     return this;
   },
   
-  setRotate3d: function(x,y,z) : HTMLElement {
-    this.style.webkitTransform = WebKitCSSMatrix.__IDENTITY__.rotate(x,y,z);
+  setRotateAxisAngle: function(x,y,z,a) : HTMLElement {
+    this.style.webkitTransform = WebKitCSSMatrix.__IDENTITY__.rotateAxisAngle(x,y,z,a);
     return this;
   },
-  
-  rotate3d: function(x,y,z) : HTMLElement {
-    this.style.webkitTransform = this.getComputedTransform().rotate(x,y,z);
+
+  rotateAxisAngle: function(x,y,z,a) : HTMLElement {
+    this.style.webkitTransform = this.getComputedTransform().rotateAxisAngle(x,y,z,a);
     return this;
   },
+
+    setRotate3d: function(x,y,z,a) : HTMLElement {
+        this.style.webkitTransform = WebKitCSSMatrix.__IDENTITY__.rotate(x,y,z);
+        return this;
+    },
+
+    rotate3d: function(x,y,z,a) : HTMLElement {
+        this.style.webkitTransform = this.getComputedTransform().rotate(x,y,z);
+        return this;
+    },
   
   rotateX: function(x) : HTMLElement {
     this.rotate3d(x,0,0);

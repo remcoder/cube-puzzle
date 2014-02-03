@@ -80,5 +80,20 @@ module Cubism {
 
             return result;
         }
+
+        static Cube(edgeLength: number) : PointSet {
+            return PointSet.Cuboid(edgeLength, edgeLength, edgeLength);
+        }
+
+        static Cuboid(xLength: number, yLength: number, zLength: number) : PointSet {
+            var voxels = [];
+
+            for(var x=0 ; x<xLength ; x++)
+                for(var y=0 ; y<yLength ; y++)
+                    for(var z=0 ; z<zLength; z++)
+                        voxels.push({x:x, y:y, z:z});
+
+            return new PointSet(voxels);
+        }
 	}
 }

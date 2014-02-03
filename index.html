@@ -36,14 +36,30 @@
     {
       background-color: lightgrey;
     }
+
+    .plane .voxel-side {
+        display: none;
+    }
+
+    .xy-plane .front {
+        display: block;
+    }
+
+    .yz-plane .right {
+        display: block;
+    }
+
+    .xz-plane .bottom {
+        display: block;
+    }
     
     </style>
   </head>
-  <body>
-    <h2>Shapes</h2>
-    <table id="variants">
+  <body class="voxel-shape-container">
+    <!--<h2>Shapes</h2>-->
+    <!--<table id="variants">-->
 
-    </table>
+    <!--</table>-->
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="typescript/utils.js"></script>
     <script src="typescript/Element.Transform3d.js"></script>

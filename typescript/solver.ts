@@ -4,7 +4,7 @@
 
 module Solver {
 
-    var grid = {};
+
 
     export var Pieces : { [key : string] : Array<Cubism.IPos> } = {
         shape_a : [{x:0,y:0,z:0},{x:3,y:0,z:0},{x:0,y:1,z:0},{x:0,y:0,z:1},{x:1,y:0,z:1},{x:2,y:0,z:1},{x:3,y:0,z:1},{x:3,y:1,z:1}],
@@ -60,6 +60,57 @@ module Solver {
         return shape;
     }
 
+    function drawShape3(pieceType, pointSet : Cubism.PointSet, variant: string, pos: Cubism.IPos) {
+
+        var bounds = pointSet.getBounds();
+        var maxEdgeLength = 1 + Math.max( Math.max(bounds.max.x, bounds.max.y), bounds.max.z);
+        //console.debug('maxEdgeLength', maxEdgeLength);
+        var containerSize = maxEdgeLength * voxelSize * 1.5;
+        var $container = $('.voxel-shape-container');
+
+        var shape = new Cubism.Shape($container[0], voxelSize, pointSet.translateAll(0,3-bounds.max.y,0).points);
+        $(shape.element)
+            .addClass(pieceType)
+            .addClass(variant)
+            .attr('title', variant);
+
+        shape.element
+            .translate3d(pos.x, pos.y , pos.z)
+            .rotateAxisAngle(-1,-1, 0, 20);
+
+        var xyPlanePointSet = Cubism.PointSet.Cuboid(4, 4, 1).translateAll(0,0,-1);
+        var xyPlane = new Cubism.Shape($container[0], voxelSize, xyPlanePointSet.points);
+        $(xyPlane.element)
+            .addClass("plane")
+            .addClass("xy-plane");
+
+        xyPlane.element
+            .translate3d(pos.x, pos.y , pos.z)
+            .rotateAxisAngle(-1,-1, 0, 20);
+
+        var yzPlanePointSet = Cubism.PointSet.Cuboid(1, 4, 4).translateAll(-1,0,0);
+        var yzPlane = new Cubism.Shape($container[0], voxelSize, yzPlanePointSet.points);
+        $(yzPlane.element)
+            .addClass("plane")
+            .addClass("yz-plane");
+
+        yzPlane.element
+            .translate3d(pos.x, pos.y , pos.z)
+            .rotateAxisAngle(-1,-1, 0, 20);
+
+        var xzPlanePointSet = Cubism.PointSet.Cuboid(4, 1, 4).translateAll(0,4,0);
+        var xzPlane = new Cubism.Shape($container[0], voxelSize, xzPlanePointSet.points);
+        $(xzPlane.element)
+            .addClass("plane")
+            .addClass("xz-plane");
+
+        xzPlane.element
+            .translate3d(pos.x, pos.y , pos.z)
+            .rotateAxisAngle(-1,-1, 0, 20);
+
+        return shape;
+    }
+
     export function rotationalVariants(s : Cubism.PointSet) : Array<{ variant: string; pointSet: Cubism.PointSet }> {
       var rotations =
        ["",
@@ -85,7 +136,7 @@ module Solver {
         "XXX",
         "XXXZ",
         "XXXZZ",
-        "XXXZZZ"];
+        "XXXZZZ"].slice(0,1);
 
         var variants = [];
         for(var r=0 ; r<rotations.length ; r++)
@@ -118,12 +169,17 @@ module Solver {
 
     export function solve() {
 
+      var offset = new Cubism.Point({x:200, y:0, z:0});
 
-      Object.keys(Pieces).slice(0,1).forEach(key => {
+      Object.keys(Pieces).forEach(key => {
           var piece = Pieces[key];
           var pointSet = new Cubism.PointSet(<Array<Cubism.IPos>>piece);
           var variants = rotationalVariants(pointSet);
-          variants.forEach(v => drawShape(key, v.pointSet, v.variant));
+          variants.forEach( v => {
+              drawShape3(key, v.pointSet, v.variant, offset)
+              offset = offset.translate(0,250,0);
+          });
+
       })
 
 

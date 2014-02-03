@@ -1,7 +1,7 @@
 - improve bitstring representation for speed
 
 generate all translational variants within 4x4x4
-  - draw the shapes in 4x4x4 area
+  - draw the shapes ontop of 4x4x4 grid (make a shape for the x/y plane, x/z and y/z)
 
 combine 2 shapes
 count overlapping blocks
