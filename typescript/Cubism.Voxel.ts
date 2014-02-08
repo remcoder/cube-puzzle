@@ -36,6 +36,7 @@ module Cubism {
                 .addClass(Side[which])
                 .appendTo(this.element)[0];
 
+
             var offset = this.voxelSize/2;
             switch(which)
             {

@@ -41,48 +41,48 @@ module Solver {
 
     var voxelSize = 50; // pixel size of 1 voxel
 
-    function drawShape(pieceType, pointSet : Cubism.PointSet, variant: string) {
-      var variants = <HTMLTableElement> $('#variants')[0];
-      var row = <HTMLTableRowElement> variants.insertRow(0);
-      var cell = row.insertCell();
-
-      var bounds = pointSet.getBounds();
-      var maxEdgeLength = 1 + Math.max( Math.max(bounds.max.x, bounds.max.y), bounds.max.z);
-      //console.debug('maxEdgeLength', maxEdgeLength);
-      var containerSize = maxEdgeLength * voxelSize * 1.5;
-      var $container = $('<div>')
-          .css({
-              width: containerSize,
-              height: containerSize
-          })
-          .addClass('voxel-shape-container');
-
-      $(cell).append($container);
-
-      var shape = new Cubism.Shape($container[0], voxelSize, pointSet.points);
-      $(shape.element)
-          .addClass(pieceType)
-          .addClass(variant)
-          .attr('title', variant);
-
-      return shape;
-    }
-
-    function drawShape2(className, pointSet : Cubism.PointSet, variant: string) {
-        var $container = $('<div>')
-            .css({
-                width: 200,
-                height: 200
-            })
-            .addClass('voxel-shape-container');
-
-        $('body').append($container);
-
-        var shape = new Cubism.Shape($container[0], voxelSize, pointSet.points);
-        $(shape.element).addClass(className);
-
-        return shape;
-    }
+//    function drawShape(pieceType, pointSet : Cubism.PointSet, variant: string) {
+//      var variants = <HTMLTableElement> $('#variants')[0];
+//      var row = <HTMLTableRowElement> variants.insertRow(0);
+//      var cell = row.insertCell();
+//
+//      var bounds = pointSet.getBounds();
+//      var maxEdgeLength = 1 + Math.max( Math.max(bounds.max.x, bounds.max.y), bounds.max.z);
+//      //console.debug('maxEdgeLength', maxEdgeLength);
+//      var containerSize = maxEdgeLength * voxelSize * 1.5;
+//      var $container = $('<div>')
+//          .css({
+//              width: containerSize,
+//              height: containerSize
+//          })
+//          .addClass('voxel-shape-container');
+//
+//      $(cell).append($container);
+//
+//      var shape = new Cubism.Shape($container[0], voxelSize, pointSet.points);
+//      $(shape.element)
+//          .addClass(pieceType)
+//          .addClass(variant)
+//          .attr('title', variant);
+//
+//      return shape;
+//    }
+//
+//    function drawShape2(className, pointSet : Cubism.PointSet, variant: string) {
+//        var $container = $('<div>')
+//            .css({
+//                width: 200,
+//                height: 200
+//            })
+//            .addClass('voxel-shape-container');
+//
+//        $('body').append($container);
+//
+//        var shape = new Cubism.Shape($container[0], voxelSize, pointSet.points);
+//        $(shape.element).addClass(className);
+//
+//        return shape;
+//    }
 
     function drawShape3(pieceType, pointSet : Cubism.PointSet, variant: string, pos: Cubism.IPos, alignToBottom : boolean = false) {
 
@@ -96,34 +96,10 @@ module Solver {
         var shape = new Cubism.Shape($container[0], voxelSize, alignedPointSet.points);
         $(shape.element)
             .addClass(pieceType)
-            .addClass(variant);
+            .addClass(variant)
             //.attr('title', pointSet.toString());
 
         shape.element.translate3d(pos.x, pos.y , pos.z);
-
-        var xyPlanePointSet = Cubism.PointSet.Cuboid(4, 4, 1).translateAll(0,0,-1);
-        var xyPlane = new Cubism.Shape($container[0], voxelSize, xyPlanePointSet.points);
-        $(xyPlane.element)
-            .addClass("plane")
-            .addClass("xy-plane");
-
-        xyPlane.element.translate3d(pos.x, pos.y , pos.z);
-
-        var yzPlanePointSet = Cubism.PointSet.Cuboid(1, 4, 4).translateAll(-1,0,0);
-        var yzPlane = new Cubism.Shape($container[0], voxelSize, yzPlanePointSet.points);
-        $(yzPlane.element)
-            .addClass("plane")
-            .addClass("yz-plane");
-
-        yzPlane.element.translate3d(pos.x, pos.y , pos.z);
-
-        var xzPlanePointSet = Cubism.PointSet.Cuboid(4, 1, 4).translateAll(0,4,0);
-        var xzPlane = new Cubism.Shape($container[0], voxelSize, xzPlanePointSet.points);
-        $(xzPlane.element)
-            .addClass("plane")
-            .addClass("xz-plane");
-
-        xzPlane.element.translate3d(pos.x, pos.y , pos.z);
 
         return shape;
     }
@@ -152,6 +128,34 @@ module Solver {
 
         },0);
         //return shape;
+    }
+
+    function drawGrid(pos: Cubism.IPos) {
+        var $container = $('.voxel-shape-container');
+        var xyPlanePointSet = Cubism.PointSet.Cuboid(4, 4, 1).translateAll(0,0,-1);
+        var xyPlane = new Cubism.Shape($container[0], voxelSize, xyPlanePointSet.points);
+        $(xyPlane.element)
+            .addClass("plane")
+            .addClass("xy-plane");
+
+
+        xyPlane.element.translate3d(pos.x, pos.y , pos.z);
+
+        var yzPlanePointSet = Cubism.PointSet.Cuboid(1, 4, 4).translateAll(-1,0,0);
+        var yzPlane = new Cubism.Shape($container[0], voxelSize, yzPlanePointSet.points);
+        $(yzPlane.element)
+            .addClass("plane")
+            .addClass("yz-plane");
+
+        yzPlane.element.translate3d(pos.x, pos.y , pos.z);
+
+        var xzPlanePointSet = Cubism.PointSet.Cuboid(4, 1, 4).translateAll(0,4,0);
+        var xzPlane = new Cubism.Shape($container[0], voxelSize, xzPlanePointSet.points);
+        $(xzPlane.element)
+            .addClass("plane")
+            .addClass("xz-plane");
+
+        xzPlane.element.translate3d(pos.x, pos.y , pos.z);
     }
 
     export function rotationalVariants(s : Cubism.PointSet) : Array<{ variant: string; pointSet: Cubism.PointSet }> {
@@ -221,7 +225,6 @@ module Solver {
     //console.log(pieceKeys);
 
 
-
     /// precompute all variants of all pieces
     var variants : { [label: string] : Array<Cubism.PointSet> } = {};
 
@@ -251,7 +254,7 @@ module Solver {
             });
     }
 
-    export function solve(state : Array<Cubism.PointSet>) : any {
+    export function solve(state : Array<Cubism.PointSet>) : IState {
         state = state || [];
 
         if (state.length == 6) {
@@ -265,16 +268,32 @@ module Solver {
         // try solving each successor state until we're done
         var nextStates = next(state);
         if (!nextStates.length)
-            return false;
+            return null;
 
         return nextStates.map(solve).filter(s=>!!s)[0];
     }
 
     export function displaySolution(state: IState) {
         state.forEach((ps,i) =>
-            setTimeout(() =>
-                drawShape3(pieceKeys[i], ps, "", {x:150, y:50, z:0})
-            ,0)
-        );
+            drawShape3(pieceKeys[i], ps, "", {x:150, y:50, z:0})
+        , 0);
+    }
+
+    export function animateSolution(state: IState) {
+        var pos = {x:150, y:50, z:0};
+
+        function drawLoop(i) {
+
+            drawShape3(pieceKeys[i], state[i], "", pos);
+            if (i<5)
+                setTimeout(() => drawLoop(++i), 1000);
+            else {
+                setTimeout(() => $('.shape_a, .shape_b, .shape_c, .shape_d, .shape_e, .shape_f').remove() , 3000);
+                setTimeout(() => drawLoop(0), 4000 );
+            }
+        }
+
+        drawGrid(pos);
+        setTimeout(() => drawLoop(0), 1000 );
     }
 }

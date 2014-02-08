@@ -56,12 +56,20 @@
     .xz-plane .bottom {
         display: block;
     }
+
+    .yz-plane .voxel-side {
+        background-color: #f8f8f8;
+    }
+
+    .xy-plane .voxel-side {
+        background-color: #ddd;
+    }
     
     </style>
   </head>
   <body class="voxel-shape-container">
-    <!--<h2>Shapes</h2>-->
-    <!--<table id="variants">-->
+    <h2>3D Cube Puzzle</h2>
+  <!--<table id="variants">-->
 
     <!--</table>-->
     <script src="bower_components/jquery/jquery.js"></script>
@@ -80,7 +88,7 @@
         var s = Solver.solve();
         console.log(new Date - before, "ms passed");
         console.log(s);
-        Solver.displaySolution(s);
+        Solver.animateSolution(s);
     });</script>
   </body>
 </html>
