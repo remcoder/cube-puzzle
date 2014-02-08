@@ -1,24 +1,83 @@
+///<reference path='utils.ts' />
 ///<reference path='Cubism.Point.ts' />
 
 module Cubism {
 	export class PointSet {
-		points : Array<Point>;
 
-		constructor(points: Array<IPos>) {
+	    points : Array<Point>;
+        bits0 : number;
+        bits1 : number;
+        bits2 : number;
+        bits3 : number;
+
+        static fromBits(bits0 : number, bits1: number, bits2: number, bits3: number) : PointSet {
+            var ps = new PointSet();
+
+            ps.bits0 = bits0;
+            ps.bits1 = bits1;
+            ps.bits2 = bits2;
+            ps.bits3 = bits3;
+
+            ps.points = [];
+            for(var x=0 ; x<4 ;x++)
+            for(var y=0 ; y<4 ;y++)
+            for(var z=0 ; z<4 ;z++)
+            {
+                var bits = z === 0 ? bits0
+                            : z === 1 ? bits1
+                            : z === 2 ? bits2
+                            : bits3;
+                if (bits >> (x + y*4) & 1)
+                    ps.points.push(new Point({x:x,y:y,z:z}));
+            }
+
+            return ps;
+        }
+
+		constructor(points? : Array<IPos>) {
+            if (!points)
+                return; // uninitialized;
+
 		    this.points = points.map(p => new Point(p) );
+
+            // numeric encoding in 4 parts b/c integers cannot be accurately represented until 31 bits
+            // http://www.hunlock.com/blogs/The_Complete_Javascript_Number_Reference
+            this.bits0 = this.points
+                .filter(p => p.z===0)
+                .reduce((acc : number, p : Point) => {
+                    return acc | (1 << (p.x + p.y * 4));
+                }, 0);
+
+            this.bits1 = this.points
+                .filter(p => p.z===1)
+                .reduce((acc : number, p : Point) => {
+                    return acc | (1 << (p.x + p.y * 4));
+                }, 0);
+
+            this.bits2 = this.points
+                .filter(p => p.z===2)
+                .reduce((acc : number, p : Point) => {
+                    return acc | (1 << (p.x + p.y * 4));
+                }, 0);
+
+            this.bits3 = this.points
+                .filter(p => p.z===3)
+                .reduce((acc : number, p : Point) => {
+                    return acc | (1 << (p.x + p.y * 4));
+                }, 0);
 		}
 
-		rotateAllX(): PointSet
+		rotateAllX() : PointSet
 		{
 			return new PointSet(this.points.map(p => p.rotateX() ));
 		}
 
-		rotateAllY(): PointSet
+		rotateAllY() : PointSet
 		{
 			return new PointSet(this.points.map(p => p.rotateY() ));
 		}
 
-		rotateAllZ(): PointSet
+		rotateAllZ() : PointSet
 		{
 			return new PointSet(this.points.map(p => p.rotateZ() ));
 		}
@@ -51,34 +110,48 @@ module Cubism {
         }
 
         equals(s2 : PointSet) : boolean {
-//            if (this.points.length!= s2.points.length)
-//                return false;
-
-
-            function compare(a, b) {
-                return a.x - b.x || a.y - b.y || a.z - b.z;
-            }
-
-            this.points.sort(compare);
-            s2.points.sort(compare);
-
-            return this.points.every( (p: Point ,index) => {
-                return p.equals(s2.points[index]);
-            });
-        }
-
-        equals2(s2 : PointSet) : boolean {
-            return this.toString() == s2.toString();
+//            return this.toString() == s2.toString();
+            return this.bits0 == s2.bits0 && this.bits1 == s2.bits1 && this.bits2 == s2.bits2 && this.bits3 == s2.bits3;
         }
 
         toString() : string {
-            var bits = new Array(64);
-            var result = "";
-            this.points.forEach(p => bits[p.x + p.y*4 + p.z*16] = true);
-            for(var i=0 ; i<64 ; i++)
-                result += bits[i] ? "1" : "0";
+            var s0 = this.bits0.toString(2);
+            var s1 = this.bits1.toString(2);
+            var s2 = this.bits2.toString(2);
+            var s3 = this.bits3.toString(2);
 
-            return result;
+            // pad with leading zeros
+            return  "0".times(16 - s0.length) + s0 + ' | ' +
+                    "0".times(16 - s1.length) + s1 + ' | ' +
+                    "0".times(16 - s2.length) + s2 + ' | ' +
+                    "0".times(16 - s3.length) + s3;
+
+//            var bits = new Array(64);
+//            var result = "";
+//            this.points.forEach(p => bits[p.x + p.y*4 + p.z*16] = true);
+//            for(var i=0 ; i<64 ; i++)
+//                result += bits[i] ? "1" : "0";
+//
+//            return result;
+        }
+
+        count() : number {
+            return this.bits0.countBits() + this.bits1.countBits() + this.bits2.countBits() + this.bits3.countBits();
+        }
+
+        intersect(ps : PointSet) : PointSet {
+            var bits0 = this.bits0 & ps.bits0;
+            var bits1 = this.bits1 & ps.bits1;
+            var bits2 = this.bits2 & ps.bits2;
+            var bits3 = this.bits3 & ps.bits3;
+            return PointSet.fromBits(bits0, bits1, bits2, bits3);
+        }
+
+        overlapsWith(ps : PointSet) {
+            return  this.bits0 & ps.bits0 ||
+                    this.bits1 & ps.bits1 ||
+                    this.bits2 & ps.bits2 ||
+                    this.bits3 & ps.bits3;
         }
 
         static Cube(edgeLength: number) : PointSet {

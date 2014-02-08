@@ -75,8 +75,12 @@
     <script src="typescript/solver.js"></script>
     <script src="typescript/tests/Tests.js"></script>
     <script>$(document).ready(function() {
-        Tests.run();
-        Solver.solve();
+        //Tests.run();
+        var before = +new Date;
+        var s = Solver.solve();
+        console.log(new Date - before, "ms passed");
+        console.log(s);
+        Solver.displaySolution(s);
     });</script>
   </body>
 </html>

@@ -6,11 +6,11 @@ module Solver {
 
     export var Pieces : { [key : string] : Array<Cubism.IPos> } = {
         shape_a : [{x:0,y:0,z:0},{x:3,y:0,z:0},{x:0,y:1,z:0},{x:0,y:0,z:1},{x:1,y:0,z:1},{x:2,y:0,z:1},{x:3,y:0,z:1},{x:3,y:1,z:1}],
-//        shape_b : [{x:0,y:0,z:0},{x:0,y:1,z:0},{x:3,y:1,z:0},{x:0,y:1,z:1},{x:1,y:1,z:1},{x:2,y:1,z:1},{x:3,y:1,z:1}],
-//        shape_c : [{x:1,y:0,z:0},{x:2,y:0,z:0},{x:3,y:0,z:0},{x:3,y:1,z:0},{x:0,y:2,z:0},{x:3,y:2,z:0},{x:0,y:3,z:0},{x:1,y:3,z:0},{x:2,y:3,z:0},{x:3,y:3,z:0},{x:2,y:0,z:1},{x:3,y:0,z:1},{x:0,y:2,z:1},{x:3,y:3,z:1}],
-//        shape_d : [{x:1,y:0,z:0},{x:2,y:0,z:0},{x:3,y:0,z:0},{x:2,y:1,z:0},{x:1,y:2,z:0},{x:2,y:2,z:0},{x:0,y:3,z:0},{x:1,y:3,z:0},{x:2,y:3,z:0},{x:3,y:3,z:0},{x:1,y:0,z:1},{x:2,y:0,z:1}],
-//        shape_e : [{x:0,y:0,z:0},{x:1,y:0,z:0},{x:0,y:1,z:0},{x:3,y:1,z:0},{x:0,y:2,z:0},{x:3,y:2,z:0},{x:0,y:3,z:0},{x:1,y:3,z:0},{x:2,y:3,z:0},{x:3,y:3,z:0},{x:0,y:0,z:1},{x:1,y:3,z:1}],
-//        shape_f : [{x:0,y:0,z:0},{x:0,y:1,z:0},{x:0,y:2,z:0},{x:2,y:2,z:0},{x:0,y:3,z:0},{x:1,y:3,z:0},{x:2,y:3,z:0},{x:3,y:3,z:0},{x:1,y:2,z:1},{x:1,y:3,z:1},{x:3,y:3,z:1}]
+        shape_b : [{x:0,y:0,z:0},{x:0,y:1,z:0},{x:3,y:1,z:0},{x:0,y:1,z:1},{x:1,y:1,z:1},{x:2,y:1,z:1},{x:3,y:1,z:1}],
+        shape_c : [{x:1,y:0,z:0},{x:2,y:0,z:0},{x:3,y:0,z:0},{x:3,y:1,z:0},{x:0,y:2,z:0},{x:3,y:2,z:0},{x:0,y:3,z:0},{x:1,y:3,z:0},{x:2,y:3,z:0},{x:3,y:3,z:0},{x:2,y:0,z:1},{x:3,y:0,z:1},{x:0,y:2,z:1},{x:3,y:3,z:1}],
+        shape_d : [{x:1,y:0,z:0},{x:2,y:0,z:0},{x:3,y:0,z:0},{x:2,y:1,z:0},{x:1,y:2,z:0},{x:2,y:2,z:0},{x:0,y:3,z:0},{x:1,y:3,z:0},{x:2,y:3,z:0},{x:3,y:3,z:0},{x:1,y:0,z:1},{x:2,y:0,z:1}],
+        shape_e : [{x:0,y:0,z:0},{x:1,y:0,z:0},{x:0,y:1,z:0},{x:3,y:1,z:0},{x:0,y:2,z:0},{x:3,y:2,z:0},{x:0,y:3,z:0},{x:1,y:3,z:0},{x:2,y:3,z:0},{x:3,y:3,z:0},{x:0,y:0,z:1},{x:1,y:3,z:1}],
+        shape_f : [{x:0,y:0,z:0},{x:0,y:1,z:0},{x:0,y:2,z:0},{x:2,y:2,z:0},{x:0,y:3,z:0},{x:1,y:3,z:0},{x:2,y:3,z:0},{x:3,y:3,z:0},{x:1,y:2,z:1},{x:1,y:3,z:1},{x:3,y:3,z:1}]
     }
 
     var rotations =
@@ -84,7 +84,7 @@ module Solver {
         return shape;
     }
 
-    function drawShape3(pieceType, pointSet : Cubism.PointSet, variant: string, pos: Cubism.IPos) {
+    function drawShape3(pieceType, pointSet : Cubism.PointSet, variant: string, pos: Cubism.IPos, alignToBottom : boolean = false) {
 
         var bounds = pointSet.getBounds();
         var maxEdgeLength = 1 + Math.max( Math.max(bounds.max.x, bounds.max.y), bounds.max.z);
@@ -92,11 +92,12 @@ module Solver {
         var containerSize = maxEdgeLength * voxelSize * 1.5;
         var $container = $('.voxel-shape-container');
 
-        var shape = new Cubism.Shape($container[0], voxelSize, pointSet.translateAll(0,3-bounds.max.y,0).points);
+        var alignedPointSet = alignToBottom ? pointSet.translateAll(0,3-bounds.max.y,0) : pointSet;
+        var shape = new Cubism.Shape($container[0], voxelSize, alignedPointSet.points);
         $(shape.element)
             .addClass(pieceType)
-            .addClass(variant)
-            .attr('title', variant);
+            .addClass(variant);
+            //.attr('title', pointSet.toString());
 
         shape.element.translate3d(pos.x, pos.y , pos.z);
 
@@ -191,7 +192,7 @@ module Solver {
         var dy = 3-bounds.max.y;
         var dz = 3-bounds.max.z;
 
-        console.log("translationalVariants: ", bounds, dx,dy,dz);
+        //console.log("translationalVariants: ", bounds, dx,dy,dz);
 
         var variants = [];
         for (var x=0;x<=dx;x++)
@@ -202,30 +203,78 @@ module Solver {
         return variants;
     }
 
-    export function solve() {
+    export function allVariants (ps : Cubism.PointSet) : Array<{ variant: string; pointSet: Cubism.PointSet }>
+    {
+        return Solver.rotationalVariants(ps)
+            .reduce((variants, r : {variant: string; pointSet: Cubism.PointSet} ) => {
+                var tvariants = Solver.translationalVariants(r.pointSet);
+                tvariants.forEach(t =>  {t.variant += '|' + r.variant });
 
-      var offset = new Cubism.Point({x:50, y:50, z:0});
+                return variants.concat(tvariants);
+            }, []);
+    }
 
-      Object.keys(Pieces).forEach((key,i) => {
-          var piece = Pieces[key];
-          var pointSet = new Cubism.PointSet(<Array<Cubism.IPos>>piece);
+    var offset = new Cubism.Point({x:150, y:50, z:0});
+    var pieceKeys = Object.keys(Pieces);
+    //sort pieces descending
+    pieceKeys.sort((a,b)=>Pieces[b].length - Pieces[a].length );
+    //console.log(pieceKeys);
 
-          drawShape3(key, pointSet, "Id", offset);
 
-          var row = offset.translate(250,0,0);
-          rotationalVariants(pointSet).forEach( (v,j) => {
-              var cell = row.translate(0,0,0);
-              var variants = translationalVariants(v.pointSet)
-              console.log(variants);
-              variants.forEach( (t,k) => {
 
-                drawVariant(key, t.pointSet, v.variant + t.variant, cell);
-                cell = cell.translate(0,45,0);
-              });
+    /// precompute all variants of all pieces
+    var variants : { [label: string] : Array<Cubism.PointSet> } = {};
 
-              row = row.translate(45,0,0);
-          });
-          offset = offset.translate(0,300,0);
-      })
+    pieceKeys.forEach((p,i) => {
+        var piece = new Cubism.PointSet( Pieces[p] );
+        if (i == 0)
+            variants[p] = [piece, piece.translateAll(0,0,1), piece.translateAll(0,0,2) ];
+        else
+            variants[p] = allVariants( piece).map(v => v.pointSet);
+    });
+
+
+    export interface IState extends Array<Cubism.PointSet>
+    {}
+
+
+    function next(state : IState) : Array<IState> {
+        var nextPieceIndex = state.length;
+        var nextPiece = pieceKeys[ nextPieceIndex ];
+
+        return variants[ nextPiece ]
+            .filter(v => state.every(p => !v.overlapsWith(p)) )
+            .map(v => {
+                var newState = state.slice(0);
+                newState.push(v);
+                return newState;
+            });
+    }
+
+    export function solve(state : Array<Cubism.PointSet>) : any {
+        state = state || [];
+
+        if (state.length == 6) {
+            console.log('solution found!')
+            //console.log(state);
+
+            return state;
+        }
+
+        // calc possible successor states solution -> solution'
+        // try solving each successor state until we're done
+        var nextStates = next(state);
+        if (!nextStates.length)
+            return false;
+
+        return nextStates.map(solve).filter(s=>!!s)[0];
+    }
+
+    export function displaySolution(state: IState) {
+        state.forEach((ps,i) =>
+            setTimeout(() =>
+                drawShape3(pieceKeys[i], ps, "", {x:150, y:50, z:0})
+            ,0)
+        );
     }
 }
