@@ -275,12 +275,12 @@ module Solver {
 
     export function displaySolution(state: IState) {
         state.forEach((ps,i) =>
-            drawShape3(pieceKeys[i], ps, "", {x:150, y:50, z:0})
+            drawShape3(pieceKeys[i], ps, "", {x:150, y:0, z:0})
         , 0);
     }
 
     export function animateSolution(state: IState) {
-        var pos = {x:150, y:50, z:0};
+        var pos = {x:150, y:0, z:0};
 
         function drawLoop(i) {
 

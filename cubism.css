@@ -1,10 +1,10 @@
 .voxel-shape-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: 512px;
+    height: 256px;
     -webkit-transform-style: preserve-3d;
     -webkit-perspective: 1500px;
-    -webkit-perspective-origin: top center;
+    -webkit-perspective-origin: top right;
     -webkit-transform: translateZ(0);
     xoutline: 1px solid red;
 }
@@ -33,8 +33,4 @@
   background-color: rgba(255,255,255,0.1);
   outline: 1px solid rgba(0,0,0,0.4);
   x-webkit-backface-visibility:hidden;
-}
-
-.voxel-side.top {
-    xbackground-color:  blue;
 }

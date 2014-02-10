@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4fb1309-22e5-4877-b0be-c46182c6cc3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typescript/Cubism.Voxel.ts" afterPath="$PROJECT_DIR$/typescript/Cubism.Voxel.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cubism.css" afterPath="$PROJECT_DIR$/cubism.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/typescript/solver.ts" afterPath="$PROJECT_DIR$/typescript/solver.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo" afterPath="$PROJECT_DIR$/todo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cube_puzzle.iws" />
@@ -28,102 +28,7 @@
     <favorites_list name="cube_puzzle" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="8" selection-start="1001" selection-end="1023" vertical-scroll-proportion="-23.75" vertical-offset="390" max-vertical-offset="1500">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cubism.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cubism.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="575" selection-end="575" vertical-scroll-proportion="0.6548431" vertical-offset="0" max-vertical-offset="733">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cubism.Shape.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typescript/Cubism.Shape.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1380">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cubism.Voxel.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typescript/Cubism.Voxel.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1575">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cubism.Point.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typescript/Cubism.Point.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="4" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0" vertical-offset="107" max-vertical-offset="840">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cubism.PointSet.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typescript/Cubism.PointSet.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="20" selection-start="5241" selection-end="5241" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2670">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tests.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typescript/tests/Tests.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="70" selection-start="4871" selection-end="4883" vertical-scroll-proportion="0.0" vertical-offset="1577" max-vertical-offset="2505">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typescript/utils.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="4" selection-start="652" selection-end="708" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="solver.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typescript/solver.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="155" column="34" selection-start="6022" selection-end="6022" vertical-scroll-proportion="0.0" vertical-offset="2790" max-vertical-offset="4545">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Element.Transform3d.ts" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typescript/Element.Transform3d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="42" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="2745">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -139,16 +44,16 @@
         <option value="$PROJECT_DIR$/typings/CSSStyleDeclaration.d.ts" />
         <option value="$PROJECT_DIR$/typescript/Cubism.ts" />
         <option value="$PROJECT_DIR$/typescript/Cubism.Point.ts" />
-        <option value="$PROJECT_DIR$/todo" />
         <option value="$PROJECT_DIR$/typescript/Element.Transform3d.ts" />
         <option value="$PROJECT_DIR$/typescript/Cubism.Shape.ts" />
         <option value="$PROJECT_DIR$/typescript/utils.ts" />
         <option value="$PROJECT_DIR$/typescript/tests/Tests.ts" />
         <option value="$PROJECT_DIR$/typescript/Cubism.PointSet.ts" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/typescript/solver.ts" />
         <option value="$PROJECT_DIR$/typescript/Cubism.Voxel.ts" />
+        <option value="$PROJECT_DIR$/typescript/solver.ts" />
         <option value="$PROJECT_DIR$/cubism.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/todo" />
       </list>
     </option>
   </component>
@@ -211,34 +116,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cube_puzzle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cube_puzzle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="typings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cube_puzzle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cube_puzzle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="typescript" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -250,6 +127,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cubism-editor" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -318,13 +196,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21099745" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18040873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18040873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -354,371 +232,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/cubism.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="43" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Shape.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1455">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Voxel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="39" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Point.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="4" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0" vertical-offset="107" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.PointSet.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="45" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="2595">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/tests/Tests.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="92" selection-start="4212" selection-end="4212" vertical-scroll-proportion="0.0" vertical-offset="1575" max-vertical-offset="2145">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/utils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="4" selection-start="652" selection-end="708" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/solver.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="229" column="6" selection-start="8460" selection-end="8460" vertical-scroll-proportion="0.0" vertical-offset="3435" max-vertical-offset="3645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Element.Transform3d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="42" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="2850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="85" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="39" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cubism.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="5" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Shape.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Voxel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="39" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Point.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="902" selection-end="902" vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.PointSet.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="26" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1350">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/tests/Tests.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="47" selection-start="3878" selection-end="3878" vertical-scroll-proportion="0.0" vertical-offset="992" max-vertical-offset="1845">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/utils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/solver.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="8" selection-start="4299" selection-end="4299" vertical-scroll-proportion="0.0" vertical-offset="1335" max-vertical-offset="2055">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="85" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="39" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="93" max-vertical-offset="1020">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cubism.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="41" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="690">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Shape.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Voxel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="39" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Point.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="902" selection-end="902" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.PointSet.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="26" selection-start="1686" selection-end="1686" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1350">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/tests/Tests.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="47" selection-start="3878" selection-end="3878" vertical-scroll-proportion="0.0" vertical-offset="992" max-vertical-offset="1845">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/utils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/solver.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="8" selection-start="4299" selection-end="4299" vertical-scroll-proportion="0.0" vertical-offset="1335" max-vertical-offset="2055">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="607" selection-end="607" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="21" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="990">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cubism.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="33" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Shape.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Voxel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1545">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Point.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="872" selection-end="872" vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.PointSet.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="63" selection-start="473" selection-end="473" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="885">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/solver.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="14" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2550">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typings/CSSStyleDeclaration.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="125" selection-end="125" vertical-scroll-proportion="0.15120968" vertical-offset="0" max-vertical-offset="496" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/solver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.5033647" vertical-offset="1117" max-vertical-offset="1860" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/tests/Tests.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="85" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Element.Transform3d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="42" selection-start="1055" selection-end="1055" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="2745">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="8" selection-start="1001" selection-end="1023" vertical-scroll-proportion="-23.75" vertical-offset="390" max-vertical-offset="1500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Point.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="4" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0" vertical-offset="107" max-vertical-offset="840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.PointSet.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="20" selection-start="5241" selection-end="5241" vertical-scroll-proportion="0.0" vertical-offset="2027" max-vertical-offset="2670">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/tests/Tests.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="70" selection-start="4871" selection-end="4883" vertical-scroll-proportion="0.0" vertical-offset="1577" max-vertical-offset="2505">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/utils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="4" selection-start="652" selection-end="708" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/solver.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="34" selection-start="6022" selection-end="6022" vertical-scroll-proportion="0.0" vertical-offset="2790" max-vertical-offset="4545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Voxel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1575">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/typescript/Cubism.Shape.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="477" selection-end="477" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cubism.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="575" selection-end="575" vertical-scroll-proportion="0.6548431" vertical-offset="0" max-vertical-offset="733">
-          <folding />
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
 
